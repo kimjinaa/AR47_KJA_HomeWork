@@ -1,11 +1,13 @@
 ﻿// 001_AR47Start.cpp : 이 파일에는 'main' 함수가 포함됩니다. 거기서 프로그램 실행이 시작되고 종료됩니다.
 //
 
+// 코브부분이라고 하는데
+
 #include <iostream>
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    // 안녕하세요
 }
 
 // 프로그램 실행: <Ctrl+F5> 또는 [디버그] > [디버깅하지 않고 시작] 메뉴
