@@ -12,19 +12,23 @@
 // 특정대상이 다른 대상을 때린다.
 // 데이터를 변화시켜서 목적을 이룬다.
 
-void StatusRender(
+int StatusRender(
     const char* const _Name, // 전체 이름
     const int& _Att,  // 전체 공격력
     const int& _Hp // 전체 체력
 )
 {
+    int Status = 0;
+
     printf_s("%s 의 스테이터스 ------------\n", _Name); //전체 스테이터스
     printf_s("공격력 : %d\n", _Att); //전체 공격력
     printf_s("체력 : %d\n", _Hp); //전체 체력
     printf_s("---------------------------\n");
+
+    return Status;
 }
 
-void Damage(
+int Damage(
     const char* const _PlayerName, // 플레이어의 이름
     const char* const _MonsterName, // 몬스터의 이름
 
@@ -35,14 +39,17 @@ void Damage(
     int& _MonsterHp// 몬스터의 체력
 )
 {
+    int Damage1 = 0;
+
     _MonsterHp -= _PlayerAtt; // 바로 데미지가 들어가면 스테이터스 창도 바뀌게. 이 위치를 옮기면 실시간으로 안바뀜
     StatusRender("Player", _PlayerAtt, _PlayerHp);
     StatusRender("Monster", _MonsterAtt, _MonsterHp);
 
     printf_s("%s가 공격을 시작합니다\n", _PlayerName);
     printf_s("%s가 %d의 데미지를 입었습니다.\n", _MonsterName, _PlayerAtt);
-}
 
+    return Damage1;
+}
 
 
 int main()
