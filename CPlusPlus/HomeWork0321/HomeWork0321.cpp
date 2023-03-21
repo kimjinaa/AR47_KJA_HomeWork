@@ -35,9 +35,10 @@ void Damage(
     int& _MonsterHp// 몬스터의 체력
 )
 {
-    _MonsterHp -= _PlayerAtt;
+    _MonsterHp -= _PlayerAtt; // 바로 데미지가 들어가면 스테이터스 창도 바뀌게. 이 위치를 옮기면 실시간으로 안바뀜
     StatusRender("Player", _PlayerAtt, _PlayerHp);
     StatusRender("Monster", _MonsterAtt, _MonsterHp);
+
     printf_s("%s가 공격을 시작합니다\n", _PlayerName);
     printf_s("%s가 %d의 데미지를 입었습니다.\n", _MonsterName, _PlayerAtt);
 }
@@ -57,9 +58,9 @@ int main()
     while (true)
     {
         // 맨 처음 선언한 전체 스테이터스 함수 호출
-        StatusRender("Player", PlayerAtt, PlayerHp);
+        /*StatusRender("Player", PlayerAtt, PlayerHp);
         StatusRender("Monster", MonsterAtt, MonsterHp);
-        _getch();
+        _getch();*/
 
         system("cls");
 
