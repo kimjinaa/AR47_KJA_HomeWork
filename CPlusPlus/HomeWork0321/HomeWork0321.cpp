@@ -25,21 +25,21 @@ void StatusRender(
 }
 
 void Damage(
-    const char* const _AttName, // 플레이어의 이름
-    const char* const _DefName, // 몬스터의 이름
+    const char* const _PlayerName, // 플레이어의 이름
+    const char* const _MonsterName, // 몬스터의 이름
 
-    const int& _Att,  // 플레이어의 공격력
-    int& _AttHp, // 플레이어의 체력
+    const int& _PlayerAtt,  // 플레이어의 공격력
+    const int& _PlayerHp, // 플레이어의 체력
 
-    const int& _DefAtt, // 몬스터의 공격력
-    int& _DefHp// 몬스터의 체력
+    const int& _MonsterAtt, // 몬스터의 공격력
+    int& _MonsterHp// 몬스터의 체력
 )
 {
-    _DefHp -= _Att;
-    StatusRender("Player", _Att, _AttHp);
-    StatusRender("Monster", _DefAtt, _DefHp);
-    printf_s("%s가 공격을 시작합니다\n", _AttName);
-    printf_s("%s가 %d의 데미지를 입었습니다.\n", _DefName, _Att);
+    _MonsterHp -= _PlayerAtt;
+    StatusRender("Player", _PlayerAtt, _PlayerHp);
+    StatusRender("Monster", _MonsterAtt, _MonsterHp);
+    printf_s("%s가 공격을 시작합니다\n", _PlayerName);
+    printf_s("%s가 %d의 데미지를 입었습니다.\n", _MonsterName, _PlayerAtt);
 }
 
 
@@ -73,8 +73,8 @@ int main()
         {
             printf_s("몬스터가 죽었습니다.");
             printf_s("플레이어의 승리입니다.");
-            _getch();
-            return 0;
+            break;
+            /*return 0;*/
         }
          /*Damage("Monster", "Player", MonsterAtt, PlayerHp, PlayerAtt, PlayerHp);
          _getch();
