@@ -90,7 +90,7 @@ int main()
 			{
 				case 'w':
 				case 'W':
-					if (0 < PlayerY)
+					if ( PlayerY > 0 )
 						{
 							PlayerY -= 1;
 						}
@@ -99,7 +99,7 @@ int main()
 			{
 				case 'a':
 				case 'A':
-					if (0 < PlayerX)
+					if (PlayerX > 0 )
 						{
 							PlayerX -= 1;
 						}
@@ -108,7 +108,7 @@ int main()
 			{
 				case 'd':
 				case 'D':
-					if (PlayerX < ScreenXSize - 1)
+					if ( ScreenXSize - 1 > PlayerX )
 						{
 							PlayerX += 1;
 						}
@@ -117,7 +117,7 @@ int main()
 			{
 				case 's':
 				case 'S':
-					if (PlayerY < ScreenYSize - 1)
+					if (  ScreenYSize - 1 > PlayerY)
 						{
 							PlayerY += 1;
 						}
