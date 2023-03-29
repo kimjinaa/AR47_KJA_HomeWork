@@ -7,13 +7,6 @@ Player::Player()
 {
 
 }
-
-void Player::Fire()
-{
-	NewBullet.SetBulltPos(Pos);
-	NewBullet.FireBullet(NewBullet.BulletPos);
-}
-
 // 화면바깥으로 못나가게 하세요. 
 void Player::Input()
 {
