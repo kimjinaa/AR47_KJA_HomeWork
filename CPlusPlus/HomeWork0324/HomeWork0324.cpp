@@ -88,41 +88,41 @@ int main()
 		switch (Ch)
 		{
 			{
-				case 'w':
-				case 'W':
-					if ( PlayerY > 0 )
-						{
-							PlayerY -= 1;
-						}
-				break;
+		case 'w':
+		case 'W':
+			if (PlayerY > 0)
+			{
+				PlayerY -= 1;
+			}
+			break;
 			}
 			{
-				case 'a':
-				case 'A':
-					if (PlayerX > 0 )
-						{
-							PlayerX -= 1;
-						}
-				break;
+		case 'a':
+		case 'A':
+			if (PlayerX > 0)
+			{
+				PlayerX -= 1;
+			}
+			break;
 			}
 			{
-				case 'd':
-				case 'D':
-					if ( ScreenXSize - 1 > PlayerX )
-						{
-							PlayerX += 1;
-						}
-				break;
+		case 'd':
+		case 'D':
+			if (ScreenXSize - 1 > PlayerX)
+			{
+				PlayerX += 1;
+			}
+			break;
 			}
 			{
-				case 's':
-				case 'S':
-					if (  ScreenYSize - 1 > PlayerY)
-						{
-							PlayerY += 1;
-						}
-				break;
-			default:
+		case 's':
+		case 'S':
+			if (ScreenYSize - 1 > PlayerY)
+			{
+				PlayerY += 1;
+			}
+			break;
+		default:
 			break;
 			}
 		}
