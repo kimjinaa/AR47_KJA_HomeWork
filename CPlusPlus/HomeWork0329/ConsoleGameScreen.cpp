@@ -63,7 +63,7 @@ void ConsoleGameScreen::SetScreenCharacter(const int2& _Pos, char _Ch)
 	Arr[_Pos.Y][_Pos.X] = _Ch;
 }
 
-void ConsoleGameScreen::SetScreenBullet(const int2& _Pos, char _Ch)
+void ConsoleGameScreen::ScreenBullet(const int2& _Pos, char _Ch)
 {
 	if (true == IsScreenOver(_Pos))
 	{
