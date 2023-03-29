@@ -7,17 +7,24 @@ Player::Player()
 {
 
 }
+
+void Player::Fire()
+{
+	NewBullet.SetBulltPos(Pos);
+	NewBullet.FireBullet(NewBullet.BulletPos);
+}
+
 // 화면바깥으로 못나가게 하세요. 
 void Player::Input()
 {
-	if (0 == _kbhit())
-	{
-		// 0.5초간 멈춘다.
-		Sleep(InterFrame);
-		// 일부러 멈추게 만들겁니다.
-		// continue; 반복문 내부에서만 사용가능
-		return;
-	}
+	//if (0 == _kbhit())
+	//{
+	//	// 0.5초간 멈춘다.
+	//	Sleep(InterFrame);
+	//	// 일부러 멈추게 만들겁니다.
+	//	// continue; 반복문 내부에서만 사용가능
+	//	return;
+	//}
 
 	char Ch = _getch();
 
@@ -65,5 +72,5 @@ void Player::Input()
 		break;
 	}
 
-	Sleep(InterFrame);
+	/*Sleep(InterFrame);*/
 }

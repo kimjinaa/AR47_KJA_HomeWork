@@ -29,6 +29,15 @@ int main()
 
 		ConsoleGameScreen::GetMainScreen().ScreenPrint();
 
+		if (true == NewPlayer.IsFire())
+		{
+			ConsoleGameScreen::GetMainScreen().SetScreenBullet(NewPlayer.NewBullet.GetBulltPos(), '@');
+
+			NewPlayer.NewBullet.FireBullet(NewPlayer.NewBullet.BulletPos);
+
+		}
+
+
 		NewPlayer.Input();
 
 	}
