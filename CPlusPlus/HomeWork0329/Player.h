@@ -26,11 +26,6 @@ public:
 		return Fire;
 	}
 
-	//void Test(Bullet Test) 
-	//{
-
-	//}
-
 protected:
 
 private:
