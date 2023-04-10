@@ -1,22 +1,24 @@
 #include "Player.h"
-#include "ConsoleGameScreen.h"
 #include <conio.h>
 #include <Windows.h>
-#include "Bullet.h"
+#include <GameEngineConsole/ConsoleGameScreen.h>
+#include "ConsoleObjectManager.h"
+#include "Bomb.h"
+#include "GameEnum.h"
+
+bool Player::IsGameUpdate = true;
 
 Player::Player()
 {
 	RenderChar = '*';
+	SetPos(ConsoleGameScreen::GetMainScreen().GetScreenSize().Half());
+
 }
 // 화면바깥으로 못나가게 하세요. 
-void Player::Input()
+void Player::Update()
 {
 	if (0 == _kbhit())
 	{
-		// 0.5초간 멈춘다.
-		Sleep(InterFrame);
-		// 일부러 멈추게 만들겁니다.
-		// continue; 반복문 내부에서만 사용가능
 		return;
 	}
 
@@ -65,25 +67,21 @@ void Player::Input()
 	case 'f':
 	case 'F':
 	{
-		ShotUpdate();
+		Bomb* NewBomb = ConsoleObjectManager::CreateConsoleObject<Bomb>(ObjectOrder::Bomb);
+		NewBomb->Init();
+		NewBomb->SetPos(GetPos());
+
+
+		// 폭탄설치 
+		break;
+	}
+	case 'q':
+	case 'Q':
+	{
+		IsGameUpdate = false;
 		break;
 	}
 	default:
 		break;
-	}
-
-	Sleep(InterFrame);
-}
-
-void Player::ShotUpdate()
-{
-	Bullet& NewBullet = BulletPtr[BulletCount];
-	NewBullet.SetPos(Pos);
-	NewBullet.On();
-
-	++BulletCount;
-	if (BulletCount >= Bullet::ArrBulletCount)
-	{
-		BulletCount = 0;
 	}
 }
